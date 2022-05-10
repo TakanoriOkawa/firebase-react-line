@@ -1,9 +1,18 @@
 // rfceでスニペット
+import { Button } from '@mui/material'
 import React from 'react'
 
 function SignIn() {
+  function signInWithGoogle(){
+
+  }
+  
   return (
-    <div>SignIn</div>
+    <div>
+      <Button onClick={signInWithGoogle}>
+        グーグルでログインする
+      </Button>
+    </div>
   )
 }
 
