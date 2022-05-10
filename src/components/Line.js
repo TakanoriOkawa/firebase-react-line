@@ -1,8 +1,11 @@
 import React from 'react'
+import SignOut from './SignOut'
 
 function Line() {
   return (
-    <div>Lineです</div>
+    <div>
+      <SignOut />
+    </div>
   )
 }
 

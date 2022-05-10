@@ -8,7 +8,8 @@ import Line from './components/Line';
 
 function App() {
   // ログインしているかどうかの確認
-  const user = useAuthState(auth);
+  // userは[]で括らないと正しくログアウトできない。
+  const [ user ] = useAuthState(auth);
   console.log("ログインしているかどうか", user);
 
   return (
