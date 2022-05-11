@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import SignOut from './SignOut'
 import { db } from '../firebase'
+import SendMessage from './SendMessage';
 
 function Line() {
   // useStateの初期値は[]にする必要がある、
@@ -31,6 +32,7 @@ function Line() {
           </div>
         ))}
       </div>
+      <SendMessage />
     </div>
   )
 }
