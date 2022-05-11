@@ -1,6 +1,8 @@
+import { Input } from "@mui/material";
 import firebase from "firebase/compat/app";
 import React, {useState} from 'react'
 import { db, auth } from '../firebase'
+import SendIcon from "@mui/icons-material/Send";
 
 function SendMessage() {
   const [message, setMessage] = useState("");
@@ -25,17 +27,26 @@ function SendMessage() {
 
     // 送信後にinputの中身を空にする
     // inputのvalue属性にmessageをつけておくことでリアクティブになる
-    setMessage("") 
-
-
+    setMessage("")
   }
   return (
     <div>
       <form onSubmit={SendMessage}>
         <div className='sendMsg'>
-          <input placeholder='メッセージを入力して下さい' type="text" onChange={(e) => {
-            setMessage(e.target.value);
-          }}  value={message}/> 
+          <Input
+              style={{
+                width: "78%",
+                fontSize: "15px",
+                fontWeight: "550",
+                marginLeft: "5px",
+                marginBottom: "-3px",
+              }}
+              placeholder="メッセージを入力"
+              type="text"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+            <SendIcon style={{ color: "#7AC2FF", marginLeft: "20px" }} />
         </div>
       </form>
     </div>
