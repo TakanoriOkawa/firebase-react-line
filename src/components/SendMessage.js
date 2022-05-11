@@ -1,4 +1,4 @@
-import React from 'react'
+import firebase from "firebase/compat/app";
 import React, {useState} from 'react'
 import { db } from '../firebase'
 
@@ -9,9 +9,14 @@ function SendMessage() {
     // テキストをDBに送りたいだけで、画面をリロードする必要は無いので、
     e.preventDefault(); // デフォルトの機能を止める
 
+
+    // firebase.firestore.FieldValue.serverTimestamp()
+    // 上の処理でEnterを押した際の時間を自動で取得できる
+  
     // dbに保存する
     db.collection("message").add({
       text: message,
+      createAt: firebase.firestore.FieldValue.serverTimestamp(),
     })
 
 
