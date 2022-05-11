@@ -23,6 +23,10 @@ function SendMessage() {
       createAt: firebase.firestore.FieldValue.serverTimestamp(),
     })
 
+    // 送信後にinputの中身を空にする
+    // inputのvalue属性にmessageをつけておくことでリアクティブになる
+    setMessage("") 
+
 
   }
   return (
@@ -31,7 +35,7 @@ function SendMessage() {
         <div className='sendMsg'>
           <input placeholder='メッセージを入力して下さい' type="text" onChange={(e) => {
             setMessage(e.target.value);
-          }} /> 
+          }}  value={message}/> 
         </div>
       </form>
     </div>
